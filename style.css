@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("images/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Controls */
+.controls {
+  margin: 10px 0;
+}
+
+select,
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  background: #00cec9;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #81ecec;
+}
+
+/* Stats */
+.stats {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Board */
+.game-board {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Card */
+.card {
+  width: 100%;
+  aspect-ratio: 1/1;
+  perspective: 1200px; /* deeper 3D */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Flip effect */
+.card.flip .card-inner {
+  transform: rotateY(180deg);
+
+}
+
+.card.flip {
+  box-shadow: 0 0 20px rgba(0,255,200,0.6);
+}
+
+/* Add depth shadow */
+.card {
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Faces */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+/* Back */
+.card-back {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* Front (image) */
+.card-front {
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Matched */
+.card.matched {
+  opacity: 0.7;
+}
+
+/* Win */
+#winMessage {
+  margin-top: 15px;
+  font-size: 24px;
+  color: #ffeaa7;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Leaderboard */
+.leaderboard {
+  margin-top: 20px;
+}
+
+.leaderboard ul {
+  list-style: none;
+}
+
+/* Responsive Grid */
+.easy {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.medium {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hard {
+  grid-template-columns: repeat(6, 1fr);
+}

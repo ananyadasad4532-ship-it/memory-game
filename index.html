@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demon Slayer Memory Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🏮 Demon Slayer Memory Game ♨️</h1>
+
+  <!-- Difficulty -->
+  <div class="controls">
+    <select id="difficulty">
+      <option value="easy">Easy (4x3)</option>
+      <option value="medium" selected>Medium (4x4)</option>
+      <option value="hard">Hard (6x4)</option>
+    </select>
+    <button id="restartBtn">🔄 Restart</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <span>Moves: <b id="moves">0</b></span>
+    <span>Matches: <b id="matches">0</b></span>
+  </div>
+
+  <!-- Board -->
+  <div id="gameBoard" class="game-board"></div>
+
+  <!-- Win -->
+  <div id="winMessage" class="hidden">
+    🎉 You Won! 🎉
+  </div>
+
+  <!-- Leaderboard -->
+  <div class="leaderboard">
+    <h3>🏆 Leaderboard</h3>
+    <ul id="leaderboardList"></ul>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
